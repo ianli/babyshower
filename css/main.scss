@@ -1,0 +1,72 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import "baseline/baseline";
+
+$lo-bg-color: #09bcd4;
+
+html {
+  background-color: $lo-bg-color;
+}
+
+.lo-highlight {
+  color: #feea39;
+}
+
+.lo-main {
+  padding-top: 160px;
+}
+
+header.lo-header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 24px;
+  height: 128px;
+  background: -webkit-linear-gradient(rgba($lo-bg-color, 100), rgba($lo-bg-color, .75) 50%, rgba($lo-bg-color, 0));
+
+  ul {
+    display: flex;
+    flex-orientation: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+      padding: 0;
+      margin: 0;
+
+      > a {
+        opacity: .5;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        > img {
+          @include media-xs-up() {
+            margin-right: 16px;
+            width: 48px;
+            height: 48px;
+          }
+
+          @include media-md-up() {
+            margin-right: 20px;
+            width: 56px;
+            height: 56px;
+          }
+
+          @include media-lg-up() {
+            margin-right: 24px;
+            width: 64px;
+            height: 64px;
+          }
+        }
+      }
+    }
+  }
+}

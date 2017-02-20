@@ -1,0 +1,46 @@
+@mixin text-default($size) {
+  $font-size: map-get(map-get($text-defaults, $size), 'font-size');
+  $line-height: map-get(map-get($text-defaults, $size), 'line-height');
+  $cap-height: map-get(map-get($text-defaults, $size), 'cap-height');
+  $margin-top: map-get(map-get($text-defaults, $size), 'margin-top');
+  $margin-bottom: map-get(map-get($text-defaults, $size), 'margin-bottom');
+  $letter-spacing: map-get(map-get($text-defaults, $size), 'letter-spacing');
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin top-padding-for-text($text-size, $padding-size) {
+  $margin-top: map-get(map-get($text-defaults, $text-size), 'margin-top');
+
+  // Set margin top to 0, cuz we don't need it...
+  margin-top: 0;
+
+  // ...create the padding using a pseudo-element with a negative margin.
+  &::before {
+    content: '';
+    display: block;
+    // Setting margin-bottom of the padding
+    margin-bottom: $margin-top;
+    height: $padding-size;
+    pointer-events: none;
+  }
+}
+
+@mixin bottom-padding-for-text($text-size, $padding-size) {
+  $margin-bottom: map-get(map-get($text-defaults, $text-size), 'margin-bottom');
+
+  // Set margin bottom to 0, cuz we don't neet it...
+
+  // ...create the padding using a pseudo-element with a negative margin.
+  &::after {
+    content: '';
+    display: block;
+    // Setting margin-bottom of the padding
+    margin-top: $margin-bottom;
+    height: $padding-size;
+    pointer-events: none;
+  }
+}

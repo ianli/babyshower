@@ -1,0 +1,128 @@
+// Bootstrap SASS grid only
+// https://github.com/twbs/bootstrap-sass/issues/651
+
+// Variables
+@import "variables";
+
+// Bootstrap mixins
+@import "../bootstrap/mixins/clearfix";
+@import "../bootstrap/mixins/grid-framework";
+@import "../bootstrap/mixins/grid";
+
+// Bootstrap grid
+@import "../bootstrap/grid";
+
+// Bootstrap responsive utilities
+@import "../bootstrap/mixins/responsive-visibility";
+@import "../bootstrap/responsive-utilities";
+
+// Custom mixins
+@import "mixins/media-query";
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+* {
+  @include box-sizing(border-box);
+}
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+// There is no padding or margin in body.
+body {
+  margin: 0;
+  padding: 0;
+}
+
+//
+// Add XL grid
+//
+
+.container {
+  @media (min-width: $screen-xl-min) {
+    width: $container-xl;
+  }
+}
+
+// XL grid
+//
+// Columns, offsets, pushes, and pulls for extra large desktop device range.
+
+@media (min-width: $screen-xl-min) {
+  @include make-grid(xl);
+}
+
+// Hidden down
+
+.hidden-xs-down {
+  @include media-xs-down() {
+    display: none !important;
+  }
+}
+
+.hidden-sm-down {
+  @include media-sm-down() {
+    display: none !important;
+  }
+}
+
+.hidden-md-down {
+  @include media-md-down() {
+    display: none !important;
+  }
+}
+
+.hidden-lg-down {
+  @include media-lg-down() {
+    display: none !important;
+  }
+}
+
+.hidden-xl-down {
+  @include media-xl-down() {
+    display: none !important;
+  }
+}
+
+// Hidden up
+
+.hidden-xs-up {
+  @include media-xs-up() {
+    display: none !important;
+  }
+}
+
+.hidden-sm-up {
+  @include media-sm-up() {
+    display: none !important;
+  }
+}
+
+.hidden-md-up {
+  @include media-md-up() {
+    display: none !important;
+  }
+}
+
+.hidden-lg-up {
+  @include media-lg-up() {
+    display: none !important;
+  }
+}
+
+.hidden-xl-up {
+  @include media-xl-up() {
+    display: none !important;
+  }
+}
