@@ -25,8 +25,8 @@ header.lo-header {
   top: 0;
   left: 0;
   right: 0;
-  padding-top: 24px;
-  height: 128px;
+  padding: 16px 0;
+  height: 96px;
   background: -webkit-linear-gradient(rgba($lo-bg-color, 100), rgba($lo-bg-color, .75) 50%, rgba($lo-bg-color, 0));
 
   ul {
@@ -44,6 +44,10 @@ header.lo-header {
         opacity: .5;
 
         &:hover {
+          opacity: 1;
+        }
+
+        &.lo-header__link--active {
           opacity: 1;
         }
 
