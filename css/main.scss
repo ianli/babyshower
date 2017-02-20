@@ -16,7 +16,17 @@ html {
 }
 
 .lo-main {
-  padding-top: 160px;
+  @include media-xs-up() {
+    padding-top: 128px;
+  }
+
+  @include media-md-up() {
+    padding-top: 144px;
+  }
+
+  @include media-lg-up() {
+    padding-top: 160px;
+  }
 }
 
 header.lo-header {
