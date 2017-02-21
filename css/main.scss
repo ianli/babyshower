@@ -5,6 +5,7 @@
 
 @import "baseline/baseline";
 
+$lo-accent-color: #feea39;
 $lo-bg-color: #09bcd4;
 
 html {
@@ -12,7 +13,7 @@ html {
 }
 
 .lo-highlight {
-  color: #feea39;
+  color: $lo-accent-color;
 }
 
 .lo-main {
@@ -82,5 +83,20 @@ header.lo-header {
         }
       }
     }
+  }
+}
+
+a.lo-btn {
+  display: inline-block;
+  padding: 0 16px;
+  color: $lo-bg-color;
+  line-height: 32px;
+  border-radius: 32px;
+  border: 1px solid $lo-accent-color;
+  color: $lo-accent-color;
+
+  &:hover {
+    color: $lo-bg-color;
+    background-color: $lo-accent-color;
   }
 }
