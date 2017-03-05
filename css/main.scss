@@ -91,6 +91,7 @@ a.lo-btn {
   padding: 0 16px;
   color: $lo-bg-color;
   line-height: 32px;
+  font-size: 16px;
   border-radius: 32px;
   border: 1px solid $lo-accent-color;
   color: $lo-accent-color;
@@ -98,5 +99,12 @@ a.lo-btn {
   &:hover {
     color: $lo-bg-color;
     background-color: $lo-accent-color;
+  }
+
+  &.lo-btn--lg {
+    padding: 0 24px;
+    line-height: 48px;
+    font-size: 20px;
+    border-radius: 48px;
   }
 }
